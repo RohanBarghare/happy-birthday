@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday, Apurva!❤️</title>
-
 <style>
 /* Global Setup */
 html, body {
@@ -16,7 +15,6 @@ html, body {
     font-family: 'Playfair Display', serif;
     color: white;
 }
-
 /* Romantic Starry Night Background */
 body {
     background-image: url("https://images3.alphacoders.com/856/thumb-1920-856363.jpg");
@@ -29,7 +27,6 @@ body {
     align-items: center;
     min-height: 100vh;
 }
-
 /* Dark overlay for mood and readability */
 .overlay {
     position: fixed;
@@ -37,29 +34,28 @@ body {
     background: rgba(0,0,0,0.7);
     z-index: 1;
 }
-
 /* Center Content */
 .center {
     position: relative;
     text-align: center;
     z-index: 10;
-    padding: 40px 20px;
+    padding: 30px 20px 40px; /* Reduced top padding slightly for more vertical space */
     max-width: 90%;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
     backdrop-filter: blur(5px);
 }
-
 /* Elegant Text Styles */
 h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(2.5em, 6vw, 4em);
+    font-size: clamp(2.5em, 5.5vw, 4.5em); /* Reduced vw and max size to prevent overflow/cutting on desktop */
     letter-spacing: 3px;
     color: #ffddf4;
     text-shadow: 0 0 10px #ff69b4;
+    word-wrap: break-word; /* Safety for long text/emojis */
+    max-width: 100%;
 }
-
 h2 {
     font-family: 'Great Vibes', cursive;
     font-size: clamp(4em, 10vw, 6em);
@@ -67,7 +63,6 @@ h2 {
     text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
     margin: 10px 0 35px 0;
 }
-
 p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: clamp(1em, 2.5vw, 1.4em);
@@ -76,7 +71,6 @@ p {
     font-style: italic;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
-
 /* Multi-language */
 .multi-lang {
     font-size: 1.2em;
@@ -85,7 +79,6 @@ p {
     color: #ffd700;
     font-weight: bold;
 }
-
 /* Realistic Cake */
 .cake-container {
     margin: 40px auto;
@@ -93,7 +86,6 @@ p {
     max-width: 450px;
     position: relative;
 }
-
 .cake-image {
     width: 100%;
     height: auto;
@@ -101,11 +93,9 @@ p {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 105, 180, 0.8);
     transition: transform 0.3s ease;
 }
-
 .cake-image:hover {
     transform: scale(1.05);
 }
-
 /* Realistic flickering candle flame overlay */
 .candle-flame {
     position: absolute;
@@ -120,7 +110,6 @@ p {
     animation: flicker 0.3s infinite alternate, glow 1.5s infinite alternate;
     z-index: 15;
 }
-
 /* Bouquet */
 .bouquet-image {
     width: 80%;
@@ -132,33 +121,27 @@ p {
     animation: slideIn 1.8s forwards ease-out;
     animation-delay: 7s;
 }
-
 /* Animations */
 h1, h2, p, .cake-container, .multi-lang {
     opacity: 0;
     transform: translateY(20px);
 }
-
 h1 { animation: slideIn 1.5s forwards ease-out; animation-delay: 1s; }
 h2 { animation: slideIn 1.5s forwards ease-out; animation-delay: 2.5s; }
 p { animation: slideIn 1.5s forwards ease-out; animation-delay: 4s; }
 .cake-container { animation: slideIn 1.5s forwards ease-out; animation-delay: 5.5s; }
 .multi-lang { animation: slideIn 1.5s forwards ease-out; animation-delay: 8.5s; }
-
 @keyframes slideIn {
     to { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes flicker {
     from { opacity: 0.9; transform: scale(1) translateX(-50%); }
     to { opacity: 1; transform: scale(1.1) translateX(-50%); }
 }
-
 @keyframes glow {
     0% { box-shadow: 0 0 20px yellow, 0 0 40px orange; }
     100% { box-shadow: 0 0 30px yellow, 0 0 60px red; }
 }
-
 /* Falling Rose Petals */
 .petal {
     position: fixed;
@@ -169,14 +152,12 @@ p { animation: slideIn 1.5s forwards ease-out; animation-delay: 4s; }
     text-shadow: 0 0 8px rgba(255, 105, 180, 0.6);
     z-index: 5;
 }
-
 @keyframes fall {
     0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
     10% { opacity: 1; }
     90% { opacity: 1; }
     100% { transform: translate(var(--x-end), 110vh) rotate(var(--r-end)); opacity: 0; }
 }
-
 /* Realistic Butterflies */
 .butterfly {
     position: fixed;
@@ -187,7 +168,6 @@ p { animation: slideIn 1.5s forwards ease-out; animation-delay: 4s; }
     z-index: 5;
     opacity: 0.9;
 }
-
 @keyframes fly {
     0% { top: 80vh; left: -15vw; transform: rotate(0deg) scale(0.8); }
     25% { top: 20vh; left: 35vw; transform: rotate(30deg) scale(1.2); }
@@ -195,7 +175,6 @@ p { animation: slideIn 1.5s forwards ease-out; animation-delay: 4s; }
     75% { top: 15vh; left: 55vw; transform: rotate(40deg) scale(1.1); }
     100% { top: 80vh; left: -15vw; transform: rotate(0deg) scale(0.8); }
 }
-
 /* Fireworks Canvas */
 canvas {
     position: fixed;
@@ -203,7 +182,6 @@ canvas {
     left: 0;
     z-index: 2;
 }
-
 /* Music Indicator */
 #music-indicator {
     position: fixed;
@@ -221,26 +199,20 @@ canvas {
     cursor: pointer;
     animation: pulse 1.5s infinite;
 }
-
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7); }
     70% { box-shadow: 0 0 0 12px rgba(255, 105, 180, 0); }
     100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
 }
-
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
 </head>
-
 <body>
-
 <div class="overlay"></div>
 <canvas id="canvas"></canvas>
-
 <div class="center">
     <h1> 💖 Happy Birthday Apurva!!! 💖 </h1>
     <p> Keep smiling, keep rocking, and new year bless you with radiant health and endless happiness that sparkles as brightly as you do! 🌟💖</p>
-
     <div class="cake-container">
         <img class="cake-image" src="https://thumbs.dreamstime.com/b/indulge-romantic-valentine-chocolate-cake-featuring-edible-flowers-dark-drizzles-fresh-strawberries-set-around-candles-359944742.jpg" alt="Romantic Chocolate Birthday Cake with Candles">
         <div class="candle-flame"></div>
@@ -250,17 +222,14 @@ canvas {
         💖 वाढदिवसाच्या हार्दिक शुभेच्छा 💖
     </p>
 </div>
-
-
+<div id="music-indicator">Tap anywhere to play music! 🎶</div>
 <audio id="bgMusic" loop preload="auto">
     <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3" type="audio/mp3">
 </audio>
-
 <script>
 // Music autoplay with fallback
 const bgMusic = document.getElementById("bgMusic");
 const indicator = document.getElementById("music-indicator");
-
 function attemptMusicPlay() {
     bgMusic.play().then(() => {
         indicator.style.display = 'none';
@@ -270,14 +239,11 @@ function attemptMusicPlay() {
         document.addEventListener('touchstart', manualPlay, { once: true });
     });
 }
-
 function manualPlay() {
     bgMusic.play().catch(e => console.error(e));
     indicator.style.display = 'none';
 }
-
 document.addEventListener('DOMContentLoaded', attemptMusicPlay);
-
 // Falling Rose Petals (more realistic)
 const petalCount = 60;
 for (let i = 0; i < petalCount; i++) {
@@ -291,14 +257,12 @@ for (let i = 0; i < petalCount; i++) {
     p.style.setProperty('--r-end', Math.random() * 1440 + 'deg');
     document.body.appendChild(p);
 }
-
 // Realistic Butterflies
 const butterflyImages = [
     "https://static.vecteezy.com/system/resources/thumbnails/028/142/339/small/a-majestic-monarch-butterfly-in-mid-flight-symbolizing-the-awe-inspiring-journey-of-migration-against-a-pure-white-backdrop-photo.jpg",
     "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZsMTI5Mjk0MTAxNjUtaW1hZ2Uta3liZW9jNjEuanBn.jpg",
     "https://media.istockphoto.com/id/1336791163/photo/monarch-on-a-black-eyed-susan-flower.jpg?s=612x612&w=0&k=20&c=W3oH0Pnla11RPccbYFuquexiSFTOyPhPnkuViKXTYMI="
 ];
-
 for (let i = 0; i < 6; i++) {
     let b = document.createElement("img");
     b.className = "butterfly";
@@ -309,20 +273,16 @@ for (let i = 0; i < 6; i++) {
     b.style.animationDuration = (20 + Math.random() * 10) + "s";
     document.body.appendChild(b);
 }
-
 // Fireworks (unchanged, works great)
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
-
 let sparks = [];
-
 class Spark {
     constructor(x, y, vx, vy, color, life) {
         this.x = x; this.y = y; this.vx = vx; this.vy = vy;
@@ -343,25 +303,20 @@ class Spark {
         this.opacity = this.life / 80;
     }
 }
-
 function explode() {
     let centerX = Math.random() * canvas.width;
     let centerY = Math.random() * canvas.height * 0.6;
     let color = `hsl(${Math.random() * 360},100%,70%)`;
-
     for (let i = 0; i < 60; i++) {
         let angle = Math.random() * Math.PI * 2;
         let speed = Math.random() * 7 + 4;
         sparks.push(new Spark(centerX, centerY, Math.cos(angle) * speed, Math.sin(angle) * speed, color, 50 + Math.random() * 40));
     }
 }
-
 function animate() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
     if (Math.random() < 0.018) explode();
-
     for (let i = sparks.length - 1; i >= 0; i--) {
         sparks[i].draw();
         sparks[i].update();
@@ -371,6 +326,5 @@ function animate() {
 }
 animate();
 </script>
-
 </body>
 </html>
