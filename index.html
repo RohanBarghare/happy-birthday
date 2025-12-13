@@ -3,31 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Apurva ❤️</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<title>Happy Birthday, Apurva!❤️</title>
 
 <style>
+/* Global Setup */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-}
-
-/* Romantic Background */
-body {
+    overflow-x: hidden;
     font-family: 'Playfair Display', serif;
     color: white;
-    background-image: url("https://cdn.pixabay.com/photo/2016/11/29/05/45/stars-1869697_1280.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    overflow-x: hidden;
 }
 
-/* Dark overlay */
+/* Romantic Starry Night Background */
+body {
+    background-image: url("https://images3.alphacoders.com/856/thumb-1920-856363.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Dark overlay for mood and readability */
 .overlay {
     position: fixed;
     inset: 0;
@@ -35,120 +38,165 @@ body {
     z-index: 1;
 }
 
-/* Center box */
+/* Center Content */
 .center {
     position: relative;
-    z-index: 10;
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
     text-align: center;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(6px);
-    border-radius: 20px;
-    box-shadow: 0 0 40px rgba(255,105,180,0.6);
+    z-index: 10;
+    padding: 40px 20px;
+    max-width: 90%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+    backdrop-filter: blur(5px);
 }
 
-/* Headings */
+/* Elegant Text Styles */
 h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(3em, 6vw, 4.5em);
-    color: #ffd1e8;
-    text-shadow: 0 0 20px #ff69b4;
+    font-size: clamp(2.5em, 6vw, 4em);
+    letter-spacing: 3px;
+    color: #ffddf4;
+    text-shadow: 0 0 10px #ff69b4;
 }
 
 h2 {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(4em, 8vw, 6em);
-    margin: 10px 0 30px;
+    font-size: clamp(4em, 10vw, 6em);
     color: #ffb6c1;
-    text-shadow: 0 0 25px #ff1493;
+    text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
+    margin: 10px 0 35px 0;
 }
 
 p {
-    font-size: clamp(1em, 2.5vw, 1.3em);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: clamp(1em, 2.5vw, 1.4em);
     line-height: 1.8;
+    margin-bottom: 25px;
     font-style: italic;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
-/* Cake */
+/* Multi-language */
+.multi-lang {
+    font-size: 1.2em;
+    opacity: 0.8;
+    margin-top: 40px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* Realistic Cake */
 .cake-container {
-    position: relative;
-    width: min(380px, 85vw);
     margin: 40px auto;
-}
-
-.cake-img {
     width: 100%;
-    border-radius: 18px;
-    box-shadow:
-        0 20px 40px rgba(0,0,0,0.7),
-        0 0 30px rgba(255,105,180,0.6);
+    max-width: 450px;
+    position: relative;
 }
 
-/* Candles */
-.candle {
+.cake-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 105, 180, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.cake-image:hover {
+    transform: scale(1.05);
+}
+
+/* Realistic flickering candle flame overlay */
+.candle-flame {
     position: absolute;
-    width: 32px;
-    top: -45px;
-    animation: flicker 0.25s infinite alternate;
-    filter: drop-shadow(0 0 12px orange)
-            drop-shadow(0 0 20px gold);
-}
-.candle.left { left: 42%; }
-.candle.right { left: 55%; }
-
-@keyframes flicker {
-    from { transform: scale(1); opacity: 0.9; }
-    to { transform: scale(1.05); opacity: 1; }
+    width: 20px;
+    height: 40px;
+    background: linear-gradient(orange, yellow);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px yellow, 0 0 40px orange;
+    animation: flicker 0.3s infinite alternate, glow 1.5s infinite alternate;
+    z-index: 15;
 }
 
 /* Bouquet */
-.bouquet {
-    margin-top: 30px;
-}
-.bouquet img {
-    width: min(320px, 80vw);
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-}
-
-/* Marathi line */
-.multi-lang {
-    margin-top: 35px;
-    font-size: 1.2em;
-    color: gold;
+.bouquet-image {
+    width: 80%;
+    max-width: 350px;
+    margin: 40px auto 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: slideIn 1.8s forwards ease-out;
+    animation-delay: 7s;
 }
 
-/* Floating elements */
-.petal, .butterfly {
+/* Animations */
+h1, h2, p, .cake-container, .multi-lang {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+h1 { animation: slideIn 1.5s forwards ease-out; animation-delay: 1s; }
+h2 { animation: slideIn 1.5s forwards ease-out; animation-delay: 2.5s; }
+p { animation: slideIn 1.5s forwards ease-out; animation-delay: 4s; }
+.cake-container { animation: slideIn 1.5s forwards ease-out; animation-delay: 5.5s; }
+.multi-lang { animation: slideIn 1.5s forwards ease-out; animation-delay: 8.5s; }
+
+@keyframes slideIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flicker {
+    from { opacity: 0.9; transform: scale(1) translateX(-50%); }
+    to { opacity: 1; transform: scale(1.1) translateX(-50%); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 20px yellow, 0 0 40px orange; }
+    100% { box-shadow: 0 0 30px yellow, 0 0 60px red; }
+}
+
+/* Falling Rose Petals */
+.petal {
     position: fixed;
     pointer-events: none;
+    font-size: 28px;
+    animation: fall linear infinite;
+    color: #ffc0cb;
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.6);
     z-index: 5;
 }
 
-/* Petals */
-.petal {
-    animation: fall linear infinite;
-}
-
 @keyframes fall {
-    from { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
-    to { transform: translateY(110vh) rotate(720deg); opacity: 1; }
+    0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(var(--x-end), 110vh) rotate(var(--r-end)); opacity: 0; }
 }
 
-/* Butterflies */
+/* Realistic Butterflies */
 .butterfly {
-    animation: fly 18s linear infinite;
+    position: fixed;
+    width: 80px;
+    height: auto;
+    pointer-events: none;
+    animation: fly 25s linear infinite;
+    z-index: 5;
+    opacity: 0.9;
 }
 
 @keyframes fly {
-    0% { left: -10vw; top: 70vh; }
-    50% { left: 110vw; top: 20vh; }
-    100% { left: -10vw; top: 70vh; }
+    0% { top: 80vh; left: -15vw; transform: rotate(0deg) scale(0.8); }
+    25% { top: 20vh; left: 35vw; transform: rotate(30deg) scale(1.2); }
+    50% { top: 50vh; left: 85vw; transform: rotate(-20deg) scale(0.9); }
+    75% { top: 15vh; left: 55vw; transform: rotate(40deg) scale(1.1); }
+    100% { top: 80vh; left: -15vw; transform: rotate(0deg) scale(0.8); }
 }
 
-/* Fireworks */
+/* Fireworks Canvas */
 canvas {
     position: fixed;
     top: 0;
@@ -156,22 +204,31 @@ canvas {
     z-index: 2;
 }
 
-/* Music button */
-#musicBtn {
+/* Music Indicator */
+#music-indicator {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 12px 24px;
+    color: #ff69b4;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #ff69b4;
     border-radius: 30px;
-    border: none;
-    background: #ff69b4;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
     z-index: 999;
-    box-shadow: 0 0 25px rgba(255,105,180,0.8);
+    font-weight: bold;
+    display: none;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
 }
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(255, 105, 180, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
 </head>
 
@@ -181,103 +238,139 @@ canvas {
 <canvas id="canvas"></canvas>
 
 <div class="center">
-    <h1>Happy Birthday</h1>
+    <h1>🎉 Happy Birthday!!! 🎉</h1>
     <h2>Apurva ❤️</h2>
+    <p>May this day fill your heart with as much joy as you bring to mine.<br>You are my favourite universe 🌌</p>
 
-    <p>
-        You are my favorite universe 🌌<br>
-        May your smile shine brighter than the stars ✨
-    </p>
-
-    <!-- Cake -->
     <div class="cake-container">
-        <img class="cake-img"
-             src="https://cdn.pixabay.com/photo/2016/11/29/09/08/cake-1869227_1280.jpg">
-        <img class="candle left" src="https://pngimg.com/uploads/candle/candle_PNG25.png">
-        <img class="candle right" src="https://pngimg.com/uploads/candle/candle_PNG25.png">
+        <img class="cake-image" src="https://thumbs.dreamstime.com/b/indulge-romantic-valentine-chocolate-cake-featuring-edible-flowers-dark-drizzles-fresh-strawberries-set-around-candles-359944742.jpg" alt="Romantic Chocolate Birthday Cake with Candles">
+        <div class="candle-flame"></div>
     </div>
 
-    <!-- Bouquet -->
-    <div class="bouquet">
-        <img src="https://cdn.pixabay.com/photo/2017/01/20/15/06/sunflowers-1998711_1280.jpg">
-    </div>
+    <img class="bouquet-image" src="https://windflowerflorist.com/cdn/shop/articles/unnamed-_51_a607aab9-6462-43db-b036-58c46c2048aa_1600x.jpg?v=1737971153" alt="Romantic Wild Flowers and Sunflower Bouquet">
 
     <p class="multi-lang">
         💖 वाढदिवसाच्या हार्दिक शुभेच्छा 💖
     </p>
 </div>
 
-<button id="musicBtn">🎵 Tap for Music</button>
+<div id="music-indicator">Tap anywhere to play music! 🎶</div>
 
-<audio id="music" loop>
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3">
+<audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3" type="audio/mp3">
 </audio>
 
 <script>
-/* Music */
-const btn = document.getElementById("musicBtn");
-const music = document.getElementById("music");
-btn.onclick = () => {
-    music.play();
-    btn.style.display = "none";
-};
+// Music autoplay with fallback
+const bgMusic = document.getElementById("bgMusic");
+const indicator = document.getElementById("music-indicator");
 
-/* Rose petals */
-for (let i = 0; i < 40; i++) {
-    const p = document.createElement("div");
+function attemptMusicPlay() {
+    bgMusic.play().then(() => {
+        indicator.style.display = 'none';
+    }).catch(() => {
+        indicator.style.display = 'block';
+        document.addEventListener('click', manualPlay, { once: true });
+        document.addEventListener('touchstart', manualPlay, { once: true });
+    });
+}
+
+function manualPlay() {
+    bgMusic.play().catch(e => console.error(e));
+    indicator.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', attemptMusicPlay);
+
+// Falling Rose Petals (more realistic)
+const petalCount = 60;
+for (let i = 0; i < petalCount; i++) {
+    let p = document.createElement("div");
     p.className = "petal";
-    p.style.left = Math.random()*100 + "vw";
-    p.style.animationDuration = 8 + Math.random()*6 + "s";
-    p.innerHTML = `<img src="https://pngimg.com/uploads/rose_petals/rose_petals_PNG581.png" width="28">`;
+    p.innerHTML = "🌹";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.animationDuration = (12 + Math.random() * 12) + "s";
+    p.style.animationDelay = Math.random() * 10 + "s";
+    p.style.setProperty('--x-end', (Math.random() - 0.5) * 80 + 'vw');
+    p.style.setProperty('--r-end', Math.random() * 1440 + 'deg');
     document.body.appendChild(p);
 }
 
-/* Butterflies */
-for (let i = 0; i < 4; i++) {
-    const b = document.createElement("div");
+// Realistic Butterflies
+const butterflyImages = [
+    "https://static.vecteezy.com/system/resources/thumbnails/028/142/339/small/a-majestic-monarch-butterfly-in-mid-flight-symbolizing-the-awe-inspiring-journey-of-migration-against-a-pure-white-backdrop-photo.jpg",
+    "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2ZsMTI5Mjk0MTAxNjUtaW1hZ2Uta3liZW9jNjEuanBn.jpg",
+    "https://media.istockphoto.com/id/1336791163/photo/monarch-on-a-black-eyed-susan-flower.jpg?s=612x612&w=0&k=20&c=W3oH0Pnla11RPccbYFuquexiSFTOyPhPnkuViKXTYMI="
+];
+
+for (let i = 0; i < 6; i++) {
+    let b = document.createElement("img");
     b.className = "butterfly";
+    b.src = butterflyImages[i % butterflyImages.length];
+    b.style.left = Math.random() * 100 + "vw";
+    b.style.top = Math.random() * 80 + "vh";
     b.style.animationDelay = i * 4 + "s";
-    b.innerHTML = `<img src="https://pngimg.com/uploads/butterfly/butterfly_PNG106.png" width="50">`;
+    b.style.animationDuration = (20 + Math.random() * 10) + "s";
     document.body.appendChild(b);
 }
 
-/* Fireworks */
+// Fireworks (unchanged, works great)
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-window.onresize = () => {
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
-};
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
 let sparks = [];
+
+class Spark {
+    constructor(x, y, vx, vy, color, life) {
+        this.x = x; this.y = y; this.vx = vx; this.vy = vy;
+        this.color = color; this.life = life; this.opacity = 1;
+    }
+    draw() {
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+        ctx.fill();
+    }
+    update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vy += 0.08;
+        this.life--;
+        this.opacity = this.life / 80;
+    }
+}
+
 function explode() {
-    const x = Math.random()*canvas.width;
-    const y = Math.random()*canvas.height*0.6;
-    for (let i = 0; i < 40; i++) {
-        sparks.push({
-            x,y,
-            vx:(Math.random()-0.5)*6,
-            vy:(Math.random()-0.5)*6,
-            life:60,
-            color:`hsl(${Math.random()*360},100%,70%)`
-        });
+    let centerX = Math.random() * canvas.width;
+    let centerY = Math.random() * canvas.height * 0.6;
+    let color = `hsl(${Math.random() * 360},100%,70%)`;
+
+    for (let i = 0; i < 60; i++) {
+        let angle = Math.random() * Math.PI * 2;
+        let speed = Math.random() * 7 + 4;
+        sparks.push(new Spark(centerX, centerY, Math.cos(angle) * speed, Math.sin(angle) * speed, color, 50 + Math.random() * 40));
     }
 }
 
 function animate() {
-    ctx.fillStyle="rgba(0,0,0,0.15)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-    if (Math.random()<0.02) explode();
-    sparks.forEach((s,i)=>{
-        ctx.fillStyle=s.color;
-        ctx.beginPath();
-        ctx.arc(s.x,s.y,2,0,Math.PI*2);
-        ctx.fill();
-        s.x+=s.vx; s.y+=s.vy; s.vy+=0.05; s.life--;
-        if(s.life<=0) sparks.splice(i,1);
-    });
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (Math.random() < 0.018) explode();
+
+    for (let i = sparks.length - 1; i >= 0; i--) {
+        sparks[i].draw();
+        sparks[i].update();
+        if (sparks[i].life <= 0) sparks.splice(i, 1);
+    }
     requestAnimationFrame(animate);
 }
 animate();
