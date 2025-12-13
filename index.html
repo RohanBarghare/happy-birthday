@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday</title>
+<style>
+body {
+    margin: 0;
+    background: radial-gradient(circle, #000, #020024);
+    overflow: hidden;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+/* Center content */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Birthday text */
+h1 {
+    font-size: 3.5em;
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+    animation-delay: 4s;
+}
+
+h2 {
+    font-size: 4.5em;
+    color: #ff69b4;
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+    animation-delay: 6s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Fireworks canvas */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div class="center">
+    <h1>🎉 Happy Birthday 🎉</h1>
+    <h2>Apurva ❤️</h2>
+</div>
+
+<audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let fireworks = [];
+
+class Firework {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 3 + 2;
+        this.color = `hsl(${Math.random() * 360},100%,60%)`;
+        this.life = 100;
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
+    update() {
+        this.life--;
+    }
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    if (Math.random() < 0.2) fireworks.push(new Firework());
+    fireworks.forEach((f, i) => {
+        f.draw();
+        f.update();
+        if (f.life <= 0) fireworks.splice(i, 1);
+    });
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
