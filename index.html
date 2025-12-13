@@ -3,14 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Happy Birthday</title>
+
 <style>
 body {
     margin: 0;
-    background: radial-gradient(circle, #000, #020024);
     overflow: hidden;
-    color: white;
+    background: radial-gradient(circle at top, #1b0035, #000);
     font-family: 'Segoe UI', sans-serif;
-    text-align: center;
+    color: white;
+}
+
+/* Universe stars */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    animation: twinkle 3s infinite alternate;
+}
+@keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
 }
 
 /* Center content */
@@ -19,31 +32,80 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-/* Birthday text */
+/* Text animations */
 h1 {
-    font-size: 3.5em;
+    font-size: 3em;
     opacity: 0;
-    animation: fadeIn 3s ease forwards;
+    animation: fadeIn 3s forwards;
     animation-delay: 4s;
 }
 
 h2 {
-    font-size: 4.5em;
+    font-size: 4em;
     color: #ff69b4;
     opacity: 0;
-    animation: fadeIn 3s ease forwards;
+    animation: fadeIn 3s forwards;
     animation-delay: 6s;
 }
 
-/* Animations */
+p {
+    font-size: 1.4em;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    animation-delay: 8s;
+}
+
+/* Cake */
+.cake {
+    font-size: 5em;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    animation-delay: 10s;
+}
+
+/* Candle flame */
+.flame {
+    animation: flicker 0.3s infinite alternate;
+}
+@keyframes flicker {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+/* Fade */
 @keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
+    from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
 
-/* Fireworks canvas */
+/* Rose petals */
+.petal {
+    position: absolute;
+    color: pink;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    from { transform: translateY(-10vh); }
+    to { transform: translateY(110vh); }
+}
+
+/* Butterflies */
+.butterfly {
+    position: absolute;
+    font-size: 30px;
+    animation: fly 8s infinite linear;
+}
+@keyframes fly {
+    from { left: -10%; top: 30%; }
+    to { left: 110%; top: 10%; }
+}
+
+/* Fireworks */
 canvas {
     position: absolute;
     top: 0;
@@ -58,51 +120,96 @@ canvas {
 
 <div class="center">
     <h1>🎉 Happy Birthday 🎉</h1>
+
+    <!-- NAME -->
     <h2>Apurva ❤️</h2>
+
+    <!-- PERSONAL MESSAGE -->
+    <p>
+        You light up my universe ✨<br>
+        May your smile always shine brighter than the stars 🌟
+    </p>
+
+    <!-- CAKE & CANDLES -->
+    <div class="cake">
+        🎂 🕯️<span class="flame">🔥</span> 🕯️<span class="flame">🔥</span>
+    </div>
+
+    <!-- LANGUAGE MESSAGE -->
+    <p>
+        💖 वाढदिवसाच्या हार्दिक शुभेच्छा 💖<br>
+        💖 जन्मदिन मुबारक हो 💖
+    </p>
 </div>
 
+<!-- Background music -->
 <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3" type="audio/mpeg">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3">
 </audio>
 
 <script>
+// Universe stars
+for (let i = 0; i < 120; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    document.body.appendChild(star);
+}
+
+// Rose petals
+for (let i = 0; i < 30; i++) {
+    let petal = document.createElement("div");
+    petal.className = "petal";
+    petal.innerHTML = "🌹";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(petal);
+}
+
+// Butterflies
+for (let i = 0; i < 3; i++) {
+    let b = document.createElement("div");
+    b.className = "butterfly";
+    b.innerHTML = "🦋";
+    b.style.top = Math.random() * 60 + "vh";
+    b.style.animationDelay = i * 3 + "s";
+    document.body.appendChild(b);
+}
+
+// Fireworks
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
-let fireworks = [];
-
-class Firework {
+let sparks = [];
+class Spark {
     constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.radius = Math.random() * 3 + 2;
         this.color = `hsl(${Math.random() * 360},100%,60%)`;
-        this.life = 100;
+        this.life = 50;
     }
     draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
         ctx.fill();
     }
-    update() {
-        this.life--;
-    }
+    update() { this.life--; }
 }
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (Math.random() < 0.2) fireworks.push(new Firework());
-    fireworks.forEach((f, i) => {
-        f.draw();
-        f.update();
-        if (f.life <= 0) fireworks.splice(i, 1);
+    if (Math.random() < 0.3) sparks.push(new Spark());
+    sparks.forEach((s, i) => {
+        s.draw(); s.update();
+        if (s.life <= 0) sparks.splice(i, 1);
     });
     requestAnimationFrame(animate);
 }
-
 animate();
 </script>
 
