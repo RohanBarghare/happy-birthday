@@ -3,209 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday, Apurva!❤️</title>
+<title>Happy Birthday Apurva ❤️</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-/* 1. Global Reset & Setup */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+}
+
+/* Romantic Background */
+body {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/29/05/45/stars-1869697_1280.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 
-/* 2. Romantic Wallpaper & Overlay */
-body {
-    font-family: 'Playfair Display', serif; /* More elegant font */
-    color: white;
-    /* Darker, romantic, starry night background */
-    background-image: url("https://images.unsplash.com/photo-1516246875931-1e9671d43615?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Dark overlay for readability and romantic mood */
+/* Dark overlay */
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.75); /* Darker for dramatic effect */
+    background: rgba(0,0,0,0.7);
     z-index: 1;
 }
 
-/* 3. Center Content */
+/* Center box */
 .center {
     position: relative;
-    text-align: center;
     z-index: 10;
+    max-width: 900px;
+    margin: auto;
     padding: 40px 20px;
-    max-width: 90%;
-    /* Elegant, subtle background box with a slight glow */
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
-    backdrop-filter: blur(5px);
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255,105,180,0.6);
 }
 
-/* Text styles */
+/* Headings */
 h1 {
-    font-family: 'Great Vibes', cursive; /* Script font for romance */
-    font-size: clamp(2.5em, 6vw, 4em);
-    letter-spacing: 3px;
-    color: #ffddf4; /* Light pink/gold for elegance */
-    text-shadow: 0 0 10px #ff69b4;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3em, 6vw, 4.5em);
+    color: #ffd1e8;
+    text-shadow: 0 0 20px #ff69b4;
 }
 
 h2 {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(4em, 10vw, 6em);
-    color: #ffb6c1; /* Lighter pink for main name */
-    text-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
-    margin: 10px 0 35px 0;
+    font-size: clamp(4em, 8vw, 6em);
+    margin: 10px 0 30px;
+    color: #ffb6c1;
+    text-shadow: 0 0 25px #ff1493;
 }
 
 p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: clamp(1em, 2.5vw, 1.4em);
+    font-size: clamp(1em, 2.5vw, 1.3em);
     line-height: 1.8;
-    margin-bottom: 25px;
     font-style: italic;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
-/* Multi-language */
-.multi-lang {
-    font-size: 1.2em;
-    opacity: 0.8;
-    margin-top: 40px;
-    color: #ffd700; /* Gold */
-    font-weight: bold;
-}
-
-/* 4. Realistic Image Elements */
-
-/* Cake Image */
+/* Cake */
 .cake-container {
-    margin: 30px auto;
-    width: 100%;
-    max-width: 400px; /* Control size on larger screens */
     position: relative;
+    width: min(380px, 85vw);
+    margin: 40px auto;
 }
 
-.cake-image {
+.cake-img {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 105, 180, 0.7);
-    transition: transform 0.3s ease-in-out;
+    border-radius: 18px;
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.7),
+        0 0 30px rgba(255,105,180,0.6);
 }
 
-.cake-image:hover {
-    transform: scale(1.03);
-}
-
-/* Realistic Candle Effect (using a small animated div on top of the image) */
-.candle-flame {
+/* Candles */
+.candle {
     position: absolute;
-    width: 6px;
-    height: 15px;
-    background: orange;
-    border-radius: 50%;
-    top: 5%; /* Adjust based on image */
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 5px yellow, 0 0 15px orange;
-    animation: flicker 0.2s infinite alternate, glow 1s infinite alternate;
-    z-index: 15;
+    width: 32px;
+    top: -45px;
+    animation: flicker 0.25s infinite alternate;
+    filter: drop-shadow(0 0 12px orange)
+            drop-shadow(0 0 20px gold);
 }
-
-/* Bouquet Image */
-.bouquet-image {
-    width: 80%;
-    max-width: 300px;
-    margin-top: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    opacity: 0; /* Fade in with animation */
-    animation: slideIn 1.5s forwards ease-out;
-    animation-delay: 7s;
-}
-
-
-/* 5. Text & Image Animations */
-h1, h2, p, .cake-container, .multi-lang {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-h1 { animation: slideIn 1.5s forwards ease-out; animation-delay: 1s; }
-h2 { animation: slideIn 1.5s forwards ease-out; animation-delay: 2.5s; }
-p:nth-of-type(1) { animation: slideIn 1.5s forwards ease-out; animation-delay: 4s; }
-.cake-container { animation: slideIn 1.5s forwards ease-out; animation-delay: 5.5s; }
-.multi-lang { animation: slideIn 1.5s forwards ease-out; animation-delay: 8.5s; }
-
-
-@keyframes slideIn {
-    to { opacity: 1; transform: translateY(0); }
-}
+.candle.left { left: 42%; }
+.candle.right { left: 55%; }
 
 @keyframes flicker {
-    from { opacity: 0.9; transform: scale(1.05) translateX(-50%); }
-    to { opacity: 1; transform: scale(1) translateX(-50%); }
+    from { transform: scale(1); opacity: 0.9; }
+    to { transform: scale(1.05); opacity: 1; }
 }
 
-@keyframes glow {
-    0% { box-shadow: 0 0 5px yellow, 0 0 15px orange; }
-    100% { box-shadow: 0 0 8px yellow, 0 0 20px red; }
+/* Bouquet */
+.bouquet {
+    margin-top: 30px;
+}
+.bouquet img {
+    width: min(320px, 80vw);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
 }
 
-/* 6. Star, Petal, Butterfly & Fireworks */
+/* Marathi line */
+.multi-lang {
+    margin-top: 35px;
+    font-size: 1.2em;
+    color: gold;
+}
 
-.star, .petal, .butterfly {
+/* Floating elements */
+.petal, .butterfly {
     position: fixed;
     pointer-events: none;
     z-index: 5;
 }
 
-/* Falling Petals */
+/* Petals */
 .petal {
-    font-size: 20px;
     animation: fall linear infinite;
-    color: #ffc0cb; /* Pink hue for petals */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 @keyframes fall {
-    0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translate(var(--x-end), 110vh) rotate(var(--r-end)); opacity: 0; }
+    from { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+    to { transform: translateY(110vh) rotate(720deg); opacity: 1; }
 }
 
 /* Butterflies */
 .butterfly {
-    font-size: 30px;
-    animation: fly 20s linear infinite;
-    transform: scale(0.8);
+    animation: fly 18s linear infinite;
 }
 
-/* Custom fly animation for a sweeping, romantic path */
 @keyframes fly {
-    0% { top: 70vh; left: -10vw; }
-    25% { top: 20vh; left: 30vw; transform: scale(1.2); }
-    50% { top: 50vh; left: 80vw; transform: scale(0.9); }
-    75% { top: 10vh; left: 50vw; transform: scale(1.1); }
-    100% { top: 70vh; left: -10vw; }
+    0% { left: -10vw; top: 70vh; }
+    50% { left: 110vw; top: 20vh; }
+    100% { left: -10vw; top: 70vh; }
 }
 
-
-/* Fireworks Canvas */
+/* Fireworks */
 canvas {
     position: fixed;
     top: 0;
@@ -213,220 +156,131 @@ canvas {
     z-index: 2;
 }
 
-/* Music indicator */
-#music-indicator {
+/* Music button */
+#musicBtn {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    color: #ff69b4;
-    padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.9);
-    border: 2px solid #ff69b4;
-    border-radius: 25px;
-    z-index: 999;
-    font-weight: bold;
-    display: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: none;
+    background: #ff69b4;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
-    animation: pulse 1.5s infinite;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: 999;
+    box-shadow: 0 0 25px rgba(255,105,180,0.8);
 }
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(255, 105, 180, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
-}
-
-/* Importing elegant fonts (optional but highly recommended) */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 </style>
 </head>
 
 <body>
 
 <div class="overlay"></div>
-
 <canvas id="canvas"></canvas>
 
 <div class="center">
-    <h1>🎉 Happy Birthday!!! 🎉</h1>
-
+    <h1>Happy Birthday</h1>
     <h2>Apurva ❤️</h2>
 
     <p>
-        
-        <br>
-        May this day fill your heart with as much joy as you bring to mine.
+        You are my favorite universe 🌌<br>
+        May your smile shine brighter than the stars ✨
     </p>
 
+    <!-- Cake -->
     <div class="cake-container">
-        <img class="cake-image" src="https://images.unsplash.com/photo-1578985545068-19e4879201a0?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Romantic Chocolate Birthday Cake">
-        </div>
-    
-    <img class="bouquet-image" src="https://images.unsplash.com/photo-1544498522-d04b6848775e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wild Flowers and Sunflower Bouquet">
+        <img class="cake-img"
+             src="https://cdn.pixabay.com/photo/2016/11/29/09/08/cake-1869227_1280.jpg">
+        <img class="candle left" src="https://pngimg.com/uploads/candle/candle_PNG25.png">
+        <img class="candle right" src="https://pngimg.com/uploads/candle/candle_PNG25.png">
+    </div>
+
+    <!-- Bouquet -->
+    <div class="bouquet">
+        <img src="https://cdn.pixabay.com/photo/2017/01/20/15/06/sunflowers-1998711_1280.jpg">
+    </div>
 
     <p class="multi-lang">
-        💖 वाढदिवसाच्या हार्दिक शुभेच्छा 💖<br>
+        💖 वाढदिवसाच्या हार्दिक शुभेच्छा 💖
     </p>
 </div>
 
-<audio id="bgMusic" loop preload="auto">
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3" type="audio/mp3">
+<button id="musicBtn">🎵 Tap for Music</button>
+
+<audio id="music" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3">
 </audio>
 
 <script>
-    const bgMusic = document.getElementById("bgMusic");
-    const indicator = document.getElementById("music-indicator");
+/* Music */
+const btn = document.getElementById("musicBtn");
+const music = document.getElementById("music");
+btn.onclick = () => {
+    music.play();
+    btn.style.display = "none";
+};
 
-    // --- 1. Music Autoplay Attempt & Interaction ---
-    function attemptMusicPlay() {
-        // Show indicator initially if music hasn't started
-        indicator.style.display = 'block';
+/* Rose petals */
+for (let i = 0; i < 40; i++) {
+    const p = document.createElement("div");
+    p.className = "petal";
+    p.style.left = Math.random()*100 + "vw";
+    p.style.animationDuration = 8 + Math.random()*6 + "s";
+    p.innerHTML = `<img src="https://pngimg.com/uploads/rose_petals/rose_petals_PNG581.png" width="28">`;
+    document.body.appendChild(p);
+}
 
-        bgMusic.play().then(() => {
-            // Success: Music is playing, hide the indicator
-            indicator.style.display = 'none';
-            document.removeEventListener('click', attemptMusicPlay);
-            document.removeEventListener('touchstart', attemptMusicPlay);
-        }).catch(error => {
-            // Failure: Autoplay prevented, wait for user interaction
-            console.log("Autoplay prevented:", error);
-            document.addEventListener('click', manualMusicPlay, { once: true });
-            document.addEventListener('touchstart', manualMusicPlay, { once: true });
+/* Butterflies */
+for (let i = 0; i < 4; i++) {
+    const b = document.createElement("div");
+    b.className = "butterfly";
+    b.style.animationDelay = i * 4 + "s";
+    b.innerHTML = `<img src="https://pngimg.com/uploads/butterfly/butterfly_PNG106.png" width="50">`;
+    document.body.appendChild(b);
+}
+
+/* Fireworks */
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+window.onresize = () => {
+    canvas.width = innerWidth;
+    canvas.height = innerHeight;
+};
+
+let sparks = [];
+function explode() {
+    const x = Math.random()*canvas.width;
+    const y = Math.random()*canvas.height*0.6;
+    for (let i = 0; i < 40; i++) {
+        sparks.push({
+            x,y,
+            vx:(Math.random()-0.5)*6,
+            vy:(Math.random()-0.5)*6,
+            life:60,
+            color:`hsl(${Math.random()*360},100%,70%)`
         });
     }
+}
 
-    function manualMusicPlay() {
-        bgMusic.play().then(() => {
-            indicator.style.display = 'none';
-        }).catch(e => console.error("Manual play failed:", e));
-    }
-    
-    // Attempt to play immediately on page load
-    document.addEventListener('DOMContentLoaded', attemptMusicPlay);
-
-
-    // --- 2. Dynamic Background Effects (Stars, Petals, Fireworks, Butterflies) ---
-
-    /* Stars (Twinkling) */
-    const starCount = 120;
-    for (let i = 0; i < starCount; i++) {
-        let s = document.createElement("div");
-        s.className = "star";
-        s.style.left = Math.random() * 100 + "vw";
-        s.style.top = Math.random() * 100 + "vh";
-        s.style.animationDelay = Math.random() * 3 + "s";
-        s.style.animationDuration = (2 + Math.random() * 2) + "s";
-        s.innerHTML = "✨"; // Use a sparkling emoji for a romantic twinkle
-        s.style.fontSize = Math.random() * 15 + 10 + "px"; // Variable size
-        document.body.appendChild(s);
-    }
-
-    /* Rose petals (Falling) */
-    const petalCount = 45; // Increased count
-    for (let i = 0; i < petalCount; i++) {
-        let p = document.createElement("div");
-        p.className = "petal";
-        p.innerHTML = "🌹"; // Use a realistic rose petal emoji
-        p.style.left = Math.random() * 100 + "vw";
-        p.style.animationDuration = (10 + Math.random() * 10) + "s"; // Slower, romantic fall
-        p.style.animationDelay = Math.random() * 10 + "s";
-        
-        // Custom CSS variables for more natural, winding movement
-        p.style.setProperty('--x-end', (Math.random() - 0.5) * 60 + 'vw');
-        p.style.setProperty('--r-end', Math.random() * 1080 + 'deg');
-
-        document.body.appendChild(p);
-    }
-
-    /* Butterflies (Floating) */
-    const butterflyCount = 5;
-    const butterflyEmojis = ["🦋", "💖"]; // Added a heart for the 'twinkling heart' request
-    for (let i = 0; i < butterflyCount; i++) {
-        let b = document.createElement("div");
-        b.className = "butterfly";
-        b.innerHTML = butterflyEmojis[i % butterflyEmojis.length]; // Alternate between butterfly and heart
-        b.style.top = Math.random() * 60 + 20 + "vh";
-        b.style.left = Math.random() * 100 + "vw";
-        b.style.animationDelay = i * 4 + "s";
-        document.body.appendChild(b);
-    }
-
-    /* Fireworks */
-    const canvas = document.getElementById("canvas");
-    const ctx = canvas.getContext("2d");
-
-    function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    let sparks = [];
-    class Spark {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height * 0.4;
-            this.vx = (Math.random() - 0.5) * 5;
-            this.vy = (Math.random() - 0.5) * 5;
-            this.color = `hsl(${Math.random() * 360},100%,70%)`;
-            this.life = 60 + Math.random() * 30;
-            this.opacity = 1;
-        }
-        draw() {
-            ctx.globalAlpha = this.opacity;
-            ctx.fillStyle = this.color;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-            ctx.fill();
-        }
-        update() { 
-            this.x += this.vx;
-            this.y += this.vy;
-            this.vy += 0.05;
-            this.life--; 
-            this.opacity = this.life / 90;
-        }
-    }
-    
-    function explode() {
-        let centerX = Math.random() * canvas.width;
-        let centerY = Math.random() * canvas.height * 0.7;
-        let color = `hsl(${Math.random() * 360},100%,70%)`;
-
-        for (let i = 0; i < 50; i++) {
-            let s = new Spark();
-            s.x = centerX;
-            s.y = centerY;
-            s.color = color;
-            let angle = Math.random() * Math.PI * 2;
-            let speed = Math.random() * 6 + 3;
-            s.vx = Math.cos(angle) * speed;
-            s.vy = Math.sin(angle) * speed * 0.8;
-            s.life = 40 + Math.random() * 30;
-            sparks.push(s);
-        }
-    }
-
-    function animate() {
-        // Clear canvas with a trail effect
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        // Randomly trigger a new explosion
-        if (Math.random() < 0.015) explode(); // Increased chance for more fireworks
-
-        for (let i = sparks.length - 1; i >= 0; i--) {
-            let s = sparks[i];
-            s.draw();
-            s.update();
-            if (s.life <= 0) sparks.splice(i, 1);
-        }
-        requestAnimationFrame(animate);
-    }
-    animate();
+function animate() {
+    ctx.fillStyle="rgba(0,0,0,0.15)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    if (Math.random()<0.02) explode();
+    sparks.forEach((s,i)=>{
+        ctx.fillStyle=s.color;
+        ctx.beginPath();
+        ctx.arc(s.x,s.y,2,0,Math.PI*2);
+        ctx.fill();
+        s.x+=s.vx; s.y+=s.vy; s.vy+=0.05; s.life--;
+        if(s.life<=0) sparks.splice(i,1);
+    });
+    requestAnimationFrame(animate);
+}
+animate();
 </script>
 
 </body>
