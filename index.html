@@ -3,154 +3,163 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️</title>
+<title>Happy Birthday, Apurva! ❤️</title>
 
 <style>
+/* 1. Global Reset & Setup */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Romantic wallpaper */
+/* 2. Romantic Wallpaper & Overlay (Ensuring image loads) */
 body {
-    overflow: hidden;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
+    /* Using a more reliable, romantic image URL */
+    background-image: url("https://images.unsplash.com/photo-1542662565-7e4b939e6d0a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
+    background-attachment: fixed; /* Optional: Makes background scroll with content */
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Dark overlay for readability */
 .overlay {
-    position: absolute;
+    position: fixed; /* Use fixed for full viewport coverage */
     inset: 0;
-    background: rgba(0,0,0,0.55);
+    background: rgba(0,0,0,0.65); /* Slightly darker overlay for better contrast */
+    z-index: 1;
 }
 
-/* Center content */
+/* 3. Center Content */
 .center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative; /* Relative to flow, z-index allows it over overlay */
     text-align: center;
     z-index: 10;
-    padding: 20px;
+    padding: 40px 20px;
+    max-width: 90%;
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle box for focus */
+    border-radius: 15px;
 }
 
-/* Text animations */
-h1, h2, p, .cake {
-    opacity: 0;
-}
-
+/* Text styles */
 h1 {
-    font-size: 2.8em;
-    animation: fadeIn 3s forwards;
-    animation-delay: 3s;
+    font-size: clamp(2em, 5vw, 3.5em);
+    letter-spacing: 2px;
 }
 
 h2 {
-    font-size: 3.8em;
-    color: #ff8dc7;
-    animation: fadeIn 3s forwards;
-    animation-delay: 5s;
+    font-size: clamp(3em, 8vw, 5em);
+    color: #ffc2d1; /* Soft pink */
+    text-shadow: 0 0 15px #ff69b4; /* Glow effect */
+    margin: 10px 0 25px 0;
 }
 
 p {
-    font-size: 1.3em;
-    line-height: 1.5;
-    animation: fadeIn 3s forwards;
-    animation-delay: 7s;
+    font-size: clamp(1em, 2.5vw, 1.4em);
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 /* Cake */
 .cake {
-    font-size: 4.5em;
-    margin-top: 15px;
-    animation: fadeIn 3s forwards;
-    animation-delay: 9s;
+    font-size: clamp(3em, 8vw, 6em);
+    margin-top: 25px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 /* Candle flame */
 .flame {
-    animation: flicker 0.3s infinite alternate;
+    color: orange;
+    text-shadow: 0 0 5px yellow, 0 0 10px orange;
+    animation: flicker 0.2s infinite alternate;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+/* Multi-language */
+.multi-lang {
+    font-size: 1em;
+    opacity: 0.7;
+    margin-top: 30px;
+}
+
+/* 4. Text Animations */
+h1, h2, p, .cake, .multi-lang {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+h1 { animation: slideIn 1.5s forwards ease-out; animation-delay: 1s; }
+h2 { animation: slideIn 1.5s forwards ease-out; animation-delay: 2.5s; }
+p:nth-of-type(1) { animation: slideIn 1.5s forwards ease-out; animation-delay: 4s; }
+.cake { animation: slideIn 1.5s forwards ease-out; animation-delay: 5.5s; }
+.multi-lang { animation: slideIn 1.5s forwards ease-out; animation-delay: 7s; }
+
+@keyframes slideIn {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes flicker {
-    from { opacity: 0.6; }
-    to { opacity: 1; }
+    from { opacity: 0.8; transform: scale(1.05); }
+    to { opacity: 1; transform: scale(1); }
 }
 
-/* Stars */
-.star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: white;
-    animation: twinkle 3s infinite alternate;
+/* 5. Star, Petal, Butterfly & Fireworks */
+
+.star, .petal, .butterfly {
+    position: fixed; /* Use fixed for elements that cover the whole viewport */
+    pointer-events: none; /* Ignore clicks on these elements */
+    z-index: 5;
 }
 
-@keyframes twinkle {
-    from { opacity: 0.2; }
-    to { opacity: 1; }
-}
-
-/* Rose petals */
+/* Petals (using a more stylized fall) */
 .petal {
-    position: absolute;
     font-size: 20px;
     animation: fall linear infinite;
+    transform-origin: top center;
 }
 
 @keyframes fall {
-    from { transform: translateY(-10vh) rotate(0deg); }
-    to { transform: translateY(110vh) rotate(360deg); }
+    0% { transform: translate(0, -10vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translate(var(--x-end), 110vh) rotate(var(--r-end)); opacity: 0; }
 }
 
-/* Butterflies */
-.butterfly {
-    position: absolute;
-    font-size: 28px;
-    animation: fly 10s linear infinite;
-}
-
-@keyframes fly {
-    from { left: -10%; top: 30%; }
-    to { left: 110%; top: 10%; }
-}
-
-/* Fireworks */
+/* Fireworks Canvas */
 canvas {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 2; /* Below the content, above the overlay */
 }
 
-/* Music button */
-#playBtn {
+/* Music indicator (replaces old button) */
+#music-indicator {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 30px;
-    border: none;
-    background: #ff69b4;
-    color: white;
-    box-shadow: 0 0 20px rgba(255,105,180,0.8);
-    cursor: pointer;
+    color: #ff69b4;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
     z-index: 999;
+    font-weight: bold;
+    display: none; /* Hide until music tries to play */
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 105, 180, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 105, 180, 0); }
 }
 </style>
 </head>
@@ -164,106 +173,182 @@ canvas {
 <div class="center">
     <h1>🎉 Happy Birthday 🎉</h1>
 
-    <!-- CHANGE NAME HERE -->
     <h2>Apurva ❤️</h2>
 
-    <!-- PERSONAL MESSAGE -->
     <p>
         You are my favourite universe 🌌<br>
         May your smile shine brighter than the stars ✨
     </p>
 
-    <!-- CAKE & CANDLES -->
     <div class="cake">
         🎂 🕯️<span class="flame">🔥</span> 🕯️<span class="flame">🔥</span>
     </div>
 
-    <!-- MULTI LANGUAGE -->
-    <p>
+    <p class="multi-lang">
         💖 वाढदिवसाच्या हार्दिक शुभेच्छा 💖<br>
         💖 जन्मदिन मुबारक हो 💖
     </p>
 </div>
 
-<!-- Music button -->
-<button id="playBtn">🎵 Tap for Birthday Music</button>
+<div id="music-indicator">
+    Tap anywhere to play music! 🎶
+</div>
 
-<audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3">
+<audio id="bgMusic" loop preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_6f9b4fd3f3.mp3" type="audio/mp3">
 </audio>
 
 <script>
-/* Music play */
-document.getElementById("playBtn").addEventListener("click", function () {
-    document.getElementById("bgMusic").play();
-    this.style.display = "none";
-});
+    const bgMusic = document.getElementById("bgMusic");
+    const indicator = document.getElementById("music-indicator");
 
-/* Stars */
-for (let i = 0; i < 120; i++) {
-    let s = document.createElement("div");
-    s.className = "star";
-    s.style.left = Math.random() * 100 + "vw";
-    s.style.top = Math.random() * 100 + "vh";
-    s.style.animationDelay = Math.random() * 3 + "s";
-    document.body.appendChild(s);
-}
-
-/* Rose petals */
-for (let i = 0; i < 30; i++) {
-    let p = document.createElement("div");
-    p.className = "petal";
-    p.innerHTML = "🌹";
-    p.style.left = Math.random() * 100 + "vw";
-    p.style.animationDuration = (6 + Math.random() * 6) + "s";
-    document.body.appendChild(p);
-}
-
-/* Butterflies */
-for (let i = 0; i < 3; i++) {
-    let b = document.createElement("div");
-    b.className = "butterfly";
-    b.innerHTML = "🦋";
-    b.style.top = Math.random() * 60 + "vh";
-    b.style.animationDelay = i * 3 + "s";
-    document.body.appendChild(b);
-}
-
-/* Fireworks */
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
-
-let sparks = [];
-
-class Spark {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.color = `hsl(${Math.random() * 360},100%,60%)`;
-        this.life = 40;
+    // --- 1. Music Autoplay Attempt & Interaction ---
+    function attemptMusicPlay() {
+        bgMusic.play().then(() => {
+            // Success: Music is playing, hide the indicator
+            indicator.style.display = 'none';
+            document.removeEventListener('click', attemptMusicPlay);
+            document.removeEventListener('touchstart', attemptMusicPlay);
+        }).catch(error => {
+            // Failure: Autoplay prevented, show the indicator and wait for user interaction
+            console.log("Autoplay prevented:", error);
+            indicator.style.display = 'block';
+            
+            // Only attach listener if we failed to play
+            document.addEventListener('click', manualMusicPlay, { once: true });
+            document.addEventListener('touchstart', manualMusicPlay, { once: true });
+        });
     }
-    draw() {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-        ctx.fill();
-    }
-    update() { this.life--; }
-}
 
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    if (Math.random() < 0.25) sparks.push(new Spark());
-    sparks.forEach((s, i) => {
-        s.draw();
-        s.update();
-        if (s.life <= 0) sparks.splice(i, 1);
-    });
-    requestAnimationFrame(animate);
-}
-animate();
+    function manualMusicPlay() {
+        bgMusic.play().then(() => {
+            indicator.style.display = 'none';
+        }).catch(e => console.error("Manual play failed:", e));
+    }
+    
+    // Attempt to play immediately on page load (this often fails, leading to the catch block)
+    document.addEventListener('DOMContentLoaded', attemptMusicPlay);
+
+
+    // --- 2. Dynamic Background Effects (Stars, Petals, Fireworks) ---
+
+    /* Stars */
+    const starCount = 120;
+    for (let i = 0; i < starCount; i++) {
+        let s = document.createElement("div");
+        s.className = "star";
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.top = Math.random() * 100 + "vh";
+        s.style.animationDelay = Math.random() * 3 + "s";
+        s.style.animationDuration = (2 + Math.random() * 2) + "s";
+        document.body.appendChild(s);
+    }
+
+    /* Rose petals (More realistic scattering) */
+    const petalCount = 35;
+    for (let i = 0; i < petalCount; i++) {
+        let p = document.createElement("div");
+        p.className = "petal";
+        p.innerHTML = "🌸"; // Using a pink cherry blossom/rose emoji
+        p.style.left = Math.random() * 100 + "vw";
+        p.style.animationDuration = (8 + Math.random() * 8) + "s"; // Longer fall time
+        p.style.animationDelay = Math.random() * 8 + "s";
+        
+        // Custom CSS variables for more natural movement
+        p.style.setProperty('--x-end', (Math.random() - 0.5) * 50 + 'vw');
+        p.style.setProperty('--r-end', Math.random() * 1080 + 'deg');
+
+        document.body.appendChild(p);
+    }
+
+    /* Butterflies */
+    const butterflyCount = 3;
+    for (let i = 0; i < butterflyCount; i++) {
+        let b = document.createElement("div");
+        b.className = "butterfly";
+        b.innerHTML = "🦋";
+        b.style.top = Math.random() * 60 + "vh";
+        b.style.animationDelay = i * 4 + "s";
+        document.body.appendChild(b);
+    }
+
+    /* Fireworks */
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas(); // Initial call
+
+    let sparks = [];
+
+    class Spark {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height * 0.4; // Confine to top half
+            this.vx = (Math.random() - 0.5) * 5;
+            this.vy = (Math.random() - 0.5) * 5;
+            this.color = `hsl(${Math.random() * 360},100%,70%)`;
+            this.life = 60 + Math.random() * 30;
+            this.opacity = 1;
+        }
+        draw() {
+            ctx.globalAlpha = this.opacity;
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        update() { 
+            this.x += this.vx;
+            this.y += this.vy;
+            this.vy += 0.05; // Gravity
+            this.life--; 
+            this.opacity = this.life / 90; // Fade out
+        }
+    }
+    
+    // Function to create an explosion effect
+    function explode() {
+        let centerX = Math.random() * canvas.width;
+        let centerY = Math.random() * canvas.height * 0.7; // Keep explosions a bit higher
+        let color = `hsl(${Math.random() * 360},100%,70%)`;
+
+        for (let i = 0; i < 50; i++) {
+            let s = new Spark();
+            s.x = centerX;
+            s.y = centerY;
+            s.color = color;
+            // Explosion velocity
+            let angle = Math.random() * Math.PI * 2;
+            let speed = Math.random() * 6 + 3;
+            s.vx = Math.cos(angle) * speed;
+            s.vy = Math.sin(angle) * speed * 0.8; // Vertical pull is less
+            s.life = 40 + Math.random() * 30;
+            sparks.push(s);
+        }
+    }
+
+    function animate() {
+        // Clear canvas with a trail effect
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Randomly trigger a new explosion
+        if (Math.random() < 0.01) explode(); // 1% chance per frame
+
+        for (let i = sparks.length - 1; i >= 0; i--) {
+            let s = sparks[i];
+            s.draw();
+            s.update();
+            if (s.life <= 0) sparks.splice(i, 1);
+        }
+        requestAnimationFrame(animate);
+    }
+    animate();
 </script>
 
 </body>
